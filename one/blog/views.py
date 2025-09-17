@@ -29,18 +29,11 @@ users = [
 ]
 
 
-
-
-
-
-
-
 def all_user(request, username):
     for user in users:
         if user['username'] == username:
             return render(request, 'blog/all_user.html', context={'user': user})
-    raise Http404('user is not found')
-
+    raise Http404('user not found')
 
 
 
