@@ -1,39 +1,17 @@
 from django.shortcuts import render
-from django.http import Http404
-
-users = [
-    {
-        'username' :'poriya60',
-        'name' : 'poriya',
-        'email' : 'poriya@gmail.com',
-        'phone_number' : '0123456789',
-        'city' : 'karaj'
-
-    },
-    {
-        'username': 'ali40',
-        'name': 'ali',
-        'email': 'ali@gmail.com',
-        'phone_number': '0123456789',
-        'city': 'teh'
-
-    },
-    {
-        'username': 'sara20',
-        'name': 'sara',
-        'email': 'sara20@gmail.com',
-        'phone_number': '0123456789',
-        'city': 'shomal'
-    },
-
-]
+from .models import Product
 
 
-def all_user(request, username):
-    for user in users:
-        if user['username'] == username:
-            return render(request, 'blog/all_user.html', context={'user': user})
-    raise Http404('user not found')
+
+def product_list(request):
+    products = Product.objects.all()
+    return render(request, 'blog/product_list.html',context={'products': products})
+
+
+
+
+
+
 
 
 
