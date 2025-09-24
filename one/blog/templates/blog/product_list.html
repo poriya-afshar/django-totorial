@@ -10,18 +10,8 @@
 </head>
 <body>
 
-
-<!--    {% for product in products %}-->
-<!--    <p>{{product.title}}</p>-->
-<!--    <p>{{product.Description}}</p>-->
-<!--    <hr>-->
-<!--    {% endfor %}-->
-
-
-
 <div class="container">
     <h1>Product List</h1>
-
 
 <table class="table">
   <thead>
@@ -30,31 +20,23 @@
       <th scope="col">Description</th>
         <th scope="col">AddToCart</th>
         <th scope="col">price</th>
+        <th scope="col">id</th>
     </tr>
   </thead>
   <tbody>
     {% for product in products %}
     <tr>
-      <td>{{ product.title }}</td>
+      <td> <a href="{% url 'product_detail' product.id %}" >{{ product.title }}</a></td>
       <td>{{ product.Description }}</td>
         <td>{{product.AddToCart}}</td>
         <td>{{product.price}}</td>
+        <td>{{product.id}}</td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
 
-
-
-
-
-
-
 </div>
-
-
-
-
 
 </body>
 </html>

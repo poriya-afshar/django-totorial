@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>products</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href = "{%  static 'home/css/index.css'  %}" rel = "stylesheet" >
+
+
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1 id ="one">home page</h1>
+    <hr>
+    <p class = 'index'> this is test for css file  </p>
+
+
+<br>
+    <hr>
+    <p>this photo load static file app</p>
+    <img src="{%  static 'home/img/home.jpg'  %}" >
+    <br>
+    <hr>
+    <br>
+    <p>this photo load static non-app file  </p>
+    <img src="{%  static 'img/home.jpg'  %}" >
+
+    
+    
+    
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
