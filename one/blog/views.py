@@ -7,24 +7,14 @@ def product_list(request):
     return render(request, 'blog/product_list.html',context={'products': products})
 
 
-
-
-
-
-
 def product_detail(request,pk):
     detail = Product.objects.get(pk=pk)
     return render(request, 'blog/product_detail.html',context={'detail': detail})
 
 
-
-
-
-
-
-
-
-
-
-
-
+def add_to_product(request):
+    n = request.GET.get('title')
+    d = request.GET.get('description')
+    p = request.GET.get("price")
+    print(n,d,p)
+    return render(request, 'blog/add_to_product.html')
