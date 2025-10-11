@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,6 +23,8 @@
       <th scope="col">Description</th>
         <th scope="col">AddToCart</th>
         <th scope="col">price</th>
+        <th scope="col">numberOfProduct</th>
+        <th scope="col">img</th>
         <th scope="col">id</th>
     </tr>
   </thead>
@@ -43,11 +46,24 @@
             {% endif %}
 
         </td>
+        <td>{{product.numberOfProduct}}</td>
 
 
 
-        <td>{{product.id}}</td>
+       {% if not product.img %}
+            <td>
+                <img src="{% static 'blog/img/static.jpg' %}" class="img-thumbnail" style="width: 100px; height: 100px;">
+            </td>
+        {% else %}
+            <td>
+                <img src="{{ product.img.url }}" class="img-thumbnail" style="width: 100px; height: 100px;">
+            </td>
+        {% endif %}
+
+        <td>{{ product.id }}</td>
+
     </tr>
+
     {% endfor %}
   </tbody>
 </table>

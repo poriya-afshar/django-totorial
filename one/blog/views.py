@@ -14,7 +14,16 @@ def product_detail(request,pk):
 
 def add_to_product(request):
     n = request.GET.get('title')
-    d = request.GET.get('description')
+    d = request.GET.get('Description')
     p = request.GET.get("price")
-    print(n,d,p)
+    if n and d and p:
+        Product.objects.create(title=n, Description=d, price=p,numberOfProduct=0)
+
+
+
+
+
+
+
+
     return render(request, 'blog/add_to_product.html')

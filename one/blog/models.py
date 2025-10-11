@@ -10,6 +10,8 @@ class Product(models.Model):
     numberOfProduct = models.IntegerField()
     price = models.DecimalField(decimal_places=2, max_digits=5)
     AddToCart = models.BooleanField(default=False)
+    img = models.ImageField(upload_to='blog/',null=True)
 
     def __str__(self):
-        return self.title
+        return f"{self.title} <==> {self.Description[:50]}"
+
